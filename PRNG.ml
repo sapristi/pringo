@@ -14,7 +14,7 @@
 (** The two interfaces *)
 
 module type STATE = sig
-  type t
+  type t = { mutable seed: int64; gamma: int64; }
   val seed: string -> t
   val make: int array -> t
   val make_self_init: unit -> t
