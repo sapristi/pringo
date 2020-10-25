@@ -219,20 +219,3 @@ end
       are hashed using {!Digest.string} before being used.
 
       Reseeding is recommended after 2{^32} numbers have been generated. *)
-
-(** {2 The Chacha-20 implementation} *)
-
-module Chacha: sig
-  module State: STATE
-  module Pure: PURE
-end
-
-  (** This is an implementation of the [STATE] and [PURE] interfaces
-      based on the Chacha 20 stream cipher by D. J. Bernstein.
-
-      For seeding, 128 bits of entropy is recommended.  Seeds of up
-      to 32 characters are used as keys to the Chacha 20 cipher.
-      Characters beyond the first 32 are ignored.
-
-      Reseeding is recommended after 2{^64} numbers have been generated. *)
-
